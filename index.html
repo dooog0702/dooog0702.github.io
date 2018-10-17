@@ -119,7 +119,7 @@
 
 
             text-align: center;
-            background-color: gray;
+            background-color: pink;
             position: fixed;
             top: 0;
             left: 0;
@@ -165,13 +165,22 @@
 
         }
 
-        .banner img {
+        .carousel-indicators li {
+            position: relative;
+            -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+            width: 10px;
+            height: 10px;
+            margin-right: 3px;
+            margin-left: 3px;
+            text-indent: -999px;
+            cursor: pointer;
+            background-color: rgba(252, 162, 162, 0.5);
+            border-radius: 10px;
+        }
 
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 100%;
-
+        .carousel-indicators .active {
+            background-color: rgb(255, 145, 145);
         }
 
         .mobile_banner {
@@ -251,6 +260,12 @@
 
         }
 
+        .card-body h3 {
+
+            color: pink;
+
+        }
+
         .turn {
 
             transform: rotate(180deg);
@@ -268,12 +283,14 @@
         .donate_sale h5 {
 
             padding: 20px 0 0 0;
+            font-weight: bold;
 
         }
 
         .donate_sale h6 {
 
             padding-bottom: 10px;
+            color: pink;
 
         }
 
@@ -300,70 +317,27 @@
 
         }
 
-        .new_in1 {
+        .new_in_col {
 
-            float: left;
-
-        }
-
-        .new_in2 {
-
-            float: left;
+            width: 20%;
+            position: relative;
 
         }
 
-        .new_in3 {
+        .new_in_picture {
 
-            float: left;
-
-        }
-
-        .new_in4 {
-
-            float: left;
-
-        }
-
-        .new_in5 {
-
-            float: left;
-
-        }
-
-        .new_in6 {
-
-            float: left;
-
-        }
-
-        .new_in7 {
-
-            float: left;
-
-        }
-
-        .new_in8 {
-
-            float: left;
-
-        }
-
-        .new_in9 {
-
-            float: left;
-
-        }
-
-        .new_in10 {
-
-            float: left;
+            width: 100%;
 
         }
 
         .new_in {
 
-            max-width: 1050px;
-            margin: 0 auto;
+            max-width: 1140px;
+            margin: 0 auto 150px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
 
         }
 
@@ -371,6 +345,27 @@
 
             text-align: center;
             font-family: Microsoft JhengHei;
+            padding: 50px 0;
+        }
+
+
+
+        .over_layer {
+
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 192, 203, 0.705);
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+            color: white;
+
+        }
+
+
+        .new_in_col:hover .over_layer {
+            display: block;
         }
 
         .new_in_title {
@@ -382,6 +377,21 @@
         .clear_fix {
 
             clear: both;
+
+        }
+
+        .over_layer p {
+            margin: 0;
+            padding: 0px 10px 2px 0;
+            text-align: right;
+            font-family: Microsoft JhengHei;
+            font-weight: bolder;
+        }
+
+        .over_layer img {
+
+            padding: 10px 10px;
+            width: 40%;
 
         }
 
@@ -416,16 +426,6 @@
                 display: none;
             }
 
-            .banner img {
-
-                display: none;
-
-            }
-
-            .mobile_banner {
-
-                display: block;
-            }
 
             .fast_menu {
 
@@ -562,15 +562,33 @@
 
     </div>
 
-    <div class="banner">
-
-        <img src="/00-元件/台灣動物之家-banner-1.jpg" alt="banner_1">
-
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="/00-元件/台灣動物之家-banner-1.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="http://i2.hdslb.com/bfs/archive/8a440de6709a49e8e45da62dcd232e02983024a0.jpg"
+                    alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="/00-元件/台灣動物之家-banner-1.jpg" alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-
-    <div class="mobile_banner">
-
-
 
     </div>
 
@@ -696,23 +714,23 @@
         <div class="container">
             <div class="first_row row">
                 <div class="col">
-                    <img src="/00-元件/商品更新中.jpg" alt="">
-                    <h5>品名1</h5>
-                    <h6>$XXX</h6>
+                    <img src="/00-元件/義賣1-1.jpg" alt="">
+                    <h5>防丟雨傘</h5>
+                    <h6>$500</h6>
                     <div class=" donate_button"><a href="">我要購買</a></div>
                 </div>
 
                 <div class="col">
-                    <img src="/00-元件/商品更新中.jpg" alt="">
-                    <h5>品名2</h5>
-                    <h6>$XXX</h6>
+                    <img src="/00-元件/義賣2.jpg" alt="">
+                    <h5>米克斯環保袋</h5>
+                    <h6>$250</h6>
                     <div class=" donate_button"><a href="">我要購買</a></div>
                 </div>
 
                 <div class="col">
-                    <img src="/00-元件/商品更新中.jpg" alt="">
-                    <h5>品名3</h5>
-                    <h6>$XXX</h6>
+                    <img src="/00-元件/義賣3.JPG" alt="">
+                    <h5>大頭狗杯套</h5>
+                    <h6>$150</h6>
                     <div class=" donate_button"><a href="">我要購買</a></div>
                 </div>
             </div>
@@ -721,23 +739,23 @@
 
             <div class="second_row row">
                 <div class="col">
-                    <img src="/00-元件/商品更新中.jpg" alt="">
-                    <h5>品名4</h5>
-                    <h6>$XXX</h6>
+                    <img src="/00-元件/義賣4.jpg" alt="">
+                    <h5>狗狗t-shirt</h5>
+                    <h6>$150</h6>
                     <div class=" donate_button"><a href="">我要購買</a></div>
                 </div>
 
                 <div class="col">
-                    <img src="/00-元件/商品更新中.jpg" alt="">
-                    <h5>品名5</h5>
-                    <h6>$XXX</h6>
+                    <img src="/00-元件/義賣5.jpg" alt="">
+                    <h5>客製手機殼</h5>
+                    <h6>$200</h6>
                     <div class=" donate_button"><a href="">我要購買</a></div>
                 </div>
 
                 <div class="col">
-                    <img src="/00-元件/商品更新中.jpg" alt="">
-                    <h5>品名6</h5>
-                    <h6>$XXX</h6>
+                    <img src="/00-元件/義賣6.jpg" alt="">
+                    <h5>臘腸筆記本</h5>
+                    <h6>$100</h6>
                     <div class=" donate_button"><a href="">我要購買</a></div>
                 </div>
             </div>
@@ -751,22 +769,124 @@
         </div>
 
         <div class="new_in">
-            <div class="new_in1"><img src="/00-元件/資料更新中.jpg" alt=""></div>
-            <div class="new_in2"><img src="/00-元件/資料更新中.jpg" alt=""></div>
-            <div class="new_in3"><img src="/00-元件/資料更新中.jpg" alt=""></div>
-            <div class="new_in4"><img src="/00-元件/資料更新中.jpg" alt=""></div>
-            <div class="new_in5"><img src="/00-元件/資料更新中.jpg" alt=""></div>
-            <div class="new_in6"><img src="/00-元件/資料更新中.jpg" alt=""></div>
-            <div class="new_in7"><img src="/00-元件/資料更新中.jpg" alt=""></div>
-            <div class="new_in8"><img src="/00-元件/資料更新中.jpg" alt=""></div>
-            <div class="new_in9"><img src="/00-元件/資料更新中.jpg" alt=""></div>
-            <div class="new_in10"><img src="/00-元件/資料更新中.jpg" alt=""></div>
+            <div class="new_in_col">
+                <div class="over_layer">
+                    <div>
+                        <img src="/00-元件/dogicon.png" alt="">
+                    </div>
+                    <div>
+                        <p>2018/10/11</p>
+                        <p>米克斯</p>
+                        <p>公</p>
+                        <p>台中市</p>
+                        <p>約1歲</p>
+                    </div>
+                </div>
+                <img class="new_in_picture" src="/00-元件/動物1.jpg" alt="">
+            </div>
+            <div class="new_in_col">
+                <div class="over_layer">
+                    <img src="/00-元件/caticon.png" alt="">
+                    <p>2018/10/09</p>
+                    <p>米克斯</p>
+                    <p>母</p>
+                    <p>屏東市</p>
+                    <p>約3歲</p>
+                </div>
+                <img class="new_in_picture" src="/00-元件/動物2.JPG" alt="">
+            </div>
+            <div class="new_in_col">
+                <div class="over_layer">
+                    <img src="/00-元件/dogicon.png" alt="">
+                    <p>2018/10/08</p>
+                    <p>臘腸犬</p>
+                    <p>母</p>
+                    <p>高雄市</p>
+                    <p>約8歲</p>
+                </div>
+                <img class="new_in_picture" src="/00-元件/動物3.jpg" alt="">
+            </div>
+            <div class="new_in_col">
+                <div class="over_layer">
+                    <img src="/00-元件/rabbiticon.png" alt="">
+                    <p>2018/09/30</p>
+                    <p>侏儒兔</p>
+                    <p>公</p>
+                    <p>台中市</p>
+                    <p>8個月</p>
+                </div>
+                <img class="new_in_picture" src="/00-元件/動物4.png" alt="">
+            </div>
+            <div class="new_in_col">
+                <div class="over_layer">
+                    <img src="/00-元件/dogicon.png" alt="">
+                    <p>2018/09/28</p>
+                    <p>貴賓犬</p>
+                    <p>母</p>
+                    <p>高雄市</p>
+                    <p>約4歲</p>
+                </div>
+                <img class="new_in_picture" src="/00-元件/動物5.png" alt="">
+            </div>
+            <div class="new_in_col">
+                <div class="over_layer">
+                    <img src="/00-元件/dogicon.png" alt="">
+                    <p>2018/09/27</p>
+                    <p>米格魯</p>
+                    <p>母</p>
+                    <p>台中市</p>
+                    <p>約7歲</p>
+                </div>
+                <img class="new_in_picture" src="/00-元件/動物6.PNG" alt="">
+            </div>
+            <div class="new_in_col">
+                <div class="over_layer">
+                    <img src="/00-元件/dogicon.png" alt="">
+                    <p>2018/09/25</p>
+                    <p>米克斯</p>
+                    <p>母</p>
+                    <p>台中市</p>
+                    <p>3個月</p>
+                </div>
+                <img class="new_in_picture" src="/00-元件/動物7.png" alt="">
+            </div>
+            <div class="new_in_col">
+                <div class="over_layer">
+                    <img src="/00-元件/caticon.png" alt="">
+                    <p>2018/09/24</p>
+                    <p>米克斯</p>
+                    <p>母</p>
+                    <p>台中市</p>
+                    <p>約2歲</p>
+                </div>
+                <img class="new_in_picture" src="/00-元件/動物8.png" alt="">
+            </div>
+            <div class="new_in_col">
+                <div class="over_layer">
+                    <img src="/00-元件/dogicon.png" alt="">
+                    <p>2018/09/15</p>
+                    <p>米克斯</p>
+                    <p>公</p>
+                    <p>台中市</p>
+                    <p>約4歲</p>
+                </div>
+                <img class="new_in_picture" src="/00-元件/動物9.PNG" alt="">
+            </div>
+            <div class="new_in_col">
+                <div class="over_layer">
+                    <img src="/00-元件/dogicon.png" alt="">
+                    <p>2018/09/09</p>
+                    <p>米克斯</p>
+                    <p>公</p>
+                    <p>台中市</p>
+                    <p>約3歲</p>
+                </div>
+                <img class="new_in_picture" src="/00-元件/動物10.png" alt="">
+            </div>
             <div class="clear_fix"></div>
         </div>
 
     </div>
-
-
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -810,15 +930,6 @@
             document.querySelector(".down_button_2").classList.toggle('turn');
 
         }
-
-        var new_in1 = document.querySelector(".new_in1")
-
-        new_in1.onclick = function(){
-            
-            document.querySelector(".new_in1").classList.toggle('turn_white');
-
-        }
-
 
     </script>
 </body>
